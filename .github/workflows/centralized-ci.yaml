@@ -15,6 +15,10 @@ env:
   TF_CLOUD_ORGANIZATION: "Vivekyadav-tf"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   pre-commit:
     name: "Run Pre-Commit Checks"
