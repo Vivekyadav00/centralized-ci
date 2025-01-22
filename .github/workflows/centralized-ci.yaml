@@ -42,7 +42,7 @@ jobs:
         run: |
           mkdir -p "$HOME/.local/bin" downloads
           curl -Lso ./downloads/terraform-docs.tar.gz \
-            https://github.com/terraform-docs/terraform-docs/releases/download/v0.17.0/terraform-docs-v0.17.0-$(uname)-amd64.tar.gz
+            https://github.com/terraform-docs/terraform-docs/releases/download/v0.18.0/terraform-docs-v0.18.0-$(uname)-amd64.tar.gz
           tar -xzf downloads/terraform-docs.tar.gz -C downloads
           chmod +x downloads/terraform-docs
           mv downloads/terraform-docs "$HOME/.local/bin/terraform-docs"
