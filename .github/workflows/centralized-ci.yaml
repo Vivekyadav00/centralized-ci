@@ -59,7 +59,7 @@ jobs:
       - name: Run Pre-Commit Hooks
         uses: pre-commit/action@v3.0.1
         with:
-          extra_args: ['--all-files']
+          extra_args: '--all-files'
 
       - name: Verify No Unstaged Changes
         run: |
