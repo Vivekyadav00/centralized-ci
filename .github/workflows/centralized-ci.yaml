@@ -14,7 +14,6 @@ on:
       TF_API_TOKEN:
         required: true
      
-
 env:
   TF_CLOUD_ORGANIZATION: "Vivekyadav-tf"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
@@ -59,6 +58,16 @@ jobs:
 
       - name: Run Pre-Commit Hooks
         uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: ['--all-files']
+
+      - name: Verify No Unstaged Changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Unstaged changes detected. Please commit the changes made by pre-commit hooks."
+            git status
+            exit 1
+          fi
 
   terraform-plan:
     name: "Terraform Plan"
